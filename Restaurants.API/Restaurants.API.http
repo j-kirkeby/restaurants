@@ -1,0 +1,118 @@
+@host = http://localhost
+@port = 5126
+@token = CfDJ8HtwI4Sb_jJCvrcnLwKs8KJoC7IKmEnp-fFiYAcWnBZLU-Op6iFm3RVpxLAaRFFeNWT9gbeABEqENd9hk8H_x6khfDllUzMpB1WeNZdngxA-Yauxj48Gzs750TP3qyA14fLn15JGCF6dVp7YMLcpRgm_5APU4sTAljFRgfRrp0yrh900__5VZ4DMEdqrW-WuWtEy3Zre6V7WPgrxtnY85vdJt4x2YNRviuiPx9gQgY32U0n-UuSRJWdWGKEuXss2IKZsvg3pE2AKWTBlQqWw9g-0gXdc4EmhNbVJ-BvXHQN8ctk_a_R58JoGJbxHEg-qI8EHLUXI9YHM6YZD067V2PztZWyxWfhZlv4yeD0ck6A6pfpVKFczDw8MztXCLIBfGPIpUQNYFBUkNf6165HJ1gs02aWErV51H9g0TLwcCKU3Ix22dB2ydxkA9ff4SLCRd1mtnfG5gJGZI-mctmebZxuDHX02SFe0ba30rCK03Cs0kpIirFluQVhsGnOGgYda1JHSG34-CspuDJzKO2YRxFXQX59pXr0rqdXvvV4rGy07DDKt2Y_onNIHpIc4AcyhbhngHn19LuR2q5rV8Aj8nWHUk-FqjrhhRrgU4HhFMbuKwjOExlSv1g8CxQrdDYeRtUua3RWqrZuNvSbEGdQ8ezJTc7Za1xyKUzsrz79-lE7cgzFalFd6g1j2C9ffDhO9vh_TMkv-go98vHO0cJ7722oxs9QR8OjBiXuPLAqOQdbf-jJZWT2oZ58TbQHzD0idWau7BRwYFQGeAPR1t2F4r-C_ab9niCZhGDPeBqFS5VOd
+@RestaurantsAPI_HostAddress = {{host}}:{{port}}
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants?searchPhrase=Pasta&pageSize=10&pageNumber=4
+Authorization: Bearer {{token}}
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/2002
+
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/2002/dishes
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/1/dishes/1
+
+###
+DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/200211/dishes
+Authorization: Bearer {{token}}
+
+
+
+###
+
+POST {{RestaurantsAPI_HostAddress}}/api/restaurants
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "Name": "Spicy Delights",
+    "Description": "A culinary experience like no other",
+    "Category": "Italian",
+    "HasDelivery": true,
+    "ContactEmail": "info@gourmetdelights.com",
+    "ContactNumber": "555-123-4567",
+    "City": "Metropolis",
+    "Street": "456 Gourmet Avenue",
+    "PostalCode": "54-321"
+}
+
+###
+
+POST {{RestaurantsAPI_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+    "Name": "Tasty Test",
+    "Description": "A cozy restaurant",
+    "Category": "Indian",
+    "HasDelivery": true,
+    "ContactEmail": "info@test.com",
+    "ContactNumber": "555-1234",
+    "City": "New York",
+    "Street": "123 Main Street",
+    "PostalCode": "10-010"
+}
+
+###
+
+POST {{RestaurantsAPI_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+    "PostalCode": "22"
+}
+
+###
+DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/2005
+Authorization: Bearer {{token}}
+
+###
+PATCH {{RestaurantsAPI_HostAddress}}/api/restaurants/1002
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "Name": "Spicy Boyz",
+    "Description": "A cozy restaurant for families",
+    "HasDelivery": false
+}
+
+###
+
+POST {{RestaurantsAPI_HostAddress}}/api/restaurants/2002/dishes
+Content-Type: application/json
+
+{
+    "Name": "Spagetti Bolognese",
+    "Description": "Classic Italian pasta dish with r6ich meat sauce",
+    "Price": 20,
+    "KiloCalories": 738
+}
+
+
+### Identity
+POST {{RestaurantsAPI_HostAddress}}/api/identity/register
+Content-Type: application/json
+
+{
+    "email": "user@test.com",
+    "password": "Test123!"
+}
+
+### 
+
+POST {{RestaurantsAPI_HostAddress}}/api/identity/login
+Content-Type: application/json
+
+{
+    "email": "owner@test.com",
+    "password": "Test123!"
+}
+
